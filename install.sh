@@ -13,6 +13,7 @@ mkdir /home/flegma
 mkdir /home/install-scripts
 cd /home/install-scripts
 wget --no-check-certificate https://raw.githubusercontent.com/Flegma/eBot-install-script/master/ebot-install.sh && chmod +x ebot-install.sh && ./ebot-install.sh #we need the --no-check-certificate here because we are using old ssl libs and it will fail to verify ssl certificates
+rm -rf /home/ebot/ebot-web/web/installation #we need to remove installation directory in order for ebot to work
 #and now ts3 server
 wget --no-check-certificate https://files.teamspeak-services.com/releases/server/3.5.0/teamspeak3-server_linux_amd64-3.5.0.tar.bz2 #we need the --no-check-certificate here because we are using old ssl libs and it will fail to verify ssl certificates
 tar -xjvf teamspeak3-server_linux_amd64-3.5.0.tar.bz2
