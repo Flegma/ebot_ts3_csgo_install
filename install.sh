@@ -33,3 +33,5 @@ wget --no-check-certificate https://raw.githubusercontent.com/crazy-max/csgo-ser
 #Then type:
 #  '/etc/init.d/csgo-server-launcher create' to install steam and csgo
 #  '/etc/init.d/csgo-server-launcher start' to start the csgo server!
+chown -R www-data:www-data /home/ebot
+#shutdown -r now
