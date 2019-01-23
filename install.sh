@@ -33,5 +33,8 @@ wget --no-check-certificate https://raw.githubusercontent.com/crazy-max/csgo-ser
 #Then type:
 #  '/etc/init.d/csgo-server-launcher create' to install steam and csgo
 #  '/etc/init.d/csgo-server-launcher start' to start the csgo server!
+# todo: create csgo server (add gslt key when asked) and download/unpack/copy eBot Csay plugin - http://www.esport-tools.net/download/CSay-CSGO.zip
 chown -R www-data:www-data /home/ebot
+sed -i '/\[mysqld\]/a sql-mode=""' /etc/mysql/mysql.conf.d/mysqld.cnf
+service mysql restart
 #shutdown -r now
