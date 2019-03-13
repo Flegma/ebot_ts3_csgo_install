@@ -14,3 +14,5 @@ apt-cache policy libssl-dev
 apt-cache policy openssl
 ```
 and change line 10 with respective values. 
+
+I will make this process automatic when i get more time. 
