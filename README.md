@@ -6,7 +6,7 @@ You need to run it with root:
 su -c "bash <(wget -qO- https://raw.githubusercontent.com/Flegma/ebot_ts3_csgo_install/master/install.sh)"
 ```
 
-If something fails, its probably due to #openssl# and #libssl-dev# packages being updated in the Ubuntu repository. As you can see in this line 
+If something fails, its probably due to # openssl # and # libssl-dev # packages being updated in the Ubuntu repository. As you can see in this line 
 https://github.com/Flegma/ebot_ts3_csgo_install/blob/master/install.sh#L10
 we are installing particular version, that might get updated sometimes. Please contact me at Flegma (at) gmail. com or check versions with 
 ```
