@@ -37,5 +37,6 @@ wget --no-check-certificate https://raw.githubusercontent.com/crazy-max/csgo-ser
 chown -R www-data:www-data /home/ebot
 chmod -R 777 /home/ebot/ebot-csgo/demos
 sed -i '/\[mysqld\]/a sql-mode=""' /etc/mysql/mysql.conf.d/mysqld.cnf
+sed -i '/\[mysqld\]/a innodb_flush_log_at_trx_commit = 2' /etc/mysql/mysql.conf.d/mysqld.cnf
 service mysql restart
 #shutdown -r now
