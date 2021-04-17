@@ -7,7 +7,7 @@ apt-get install wget nano perl -y
 #we are removing new ssl libs and installing older ones
 apt-get remove libssl-dev openssl -y
 apt-get autoremove -y
-apt-get install -y libssl-dev=1.0.2g-1ubuntu4.15 openssl=1.0.2g-1ubuntu4.15
+apt-get install -y libssl-dev=1.0.2g-1ubuntu4.19 openssl=1.0.2g-1ubuntu4.19
 #if this version  of ssl libs are not working, check version with apt-cache policy libssl-dev and apt-cache policy openssl
 mkdir /home/flegma
 mkdir /home/install-scripts
