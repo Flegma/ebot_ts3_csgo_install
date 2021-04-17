@@ -1,5 +1,5 @@
 # ebot_ts3_csgo_install
-Installation script for EBOT, CS:GO and TS3 server on Ubuntu 16.04 LTS
+Installation script for EBOT, CS:GO and TS3 server on Ubuntu 16.04 LTS (updated and tested 17.04.2021)
 
 You need to run it with root:
 ```
