@@ -1,22 +1,25 @@
 #!/bin/bash
 apt-get update
-apt-get install -y language-pack-en-base software-properties-common python-software-properties nano wget curl git build-essential libxml2 libxml2-dev openssl libssl-dev pkg-config #install needed packages
+apt-get install -y language-pack-en-base software-properties-common nano wget curl git build-essential libxml2 libxml2-dev openssl libssl-dev pkg-config libcurl3 #install needed packages
 LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php -y #add ondrej's repo
 apt-get update #after adding new repo, we need to update package versions/information
-apt-get install wget nano perl -y
 #we are removing new ssl libs and installing older ones
 apt-get remove libssl-dev openssl -y
 apt-get autoremove -y
-apt-get install -y libssl-dev=1.0.2g-1ubuntu4.19 openssl=1.0.2g-1ubuntu4.19
+#DODATI REPO ZA STARI OPENSSL I LIBSSL-DEV
+echo '#add older ubuntu 16.04 repository' >> /etc/apt/sources.list
+echo 'deb http://security.ubuntu.com/ubuntu xenial-security main' >> /etc/apt/sources.list
+apt-get update
+apt-get install -y libssl-dev=1.0.2g-1ubuntu4.20 openssl=1.0.2g-1ubuntu4.20
 #if this version  of ssl libs are not working, check version with apt-cache policy libssl-dev and apt-cache policy openssl
 mkdir /home/flegma
 mkdir /home/install-scripts
 cd /home/install-scripts
-wget --no-check-certificate https://raw.githubusercontent.com/Flegma/eBot-install-script/master/ebot-install.sh && chmod +x ebot-install.sh && ./ebot-install.sh #we need the --no-check-certificate here because we are using old ssl libs and it will fail to verify ssl certificates
+wget --no-check-certificate https://raw.githubusercontent.com/Flegma/eBot-install-script/ubuntu-20.04/ebot-install.sh && chmod +x ebot-install.sh && ./ebot-install.sh #we need the --no-check-certificate here because we are using old ssl libs and it will fail to verify ssl certificates
 rm -rf /home/ebot/ebot-web/web/installation #we need to remove installation directory in order for ebot to work
 #and now ts3 server
-wget --no-check-certificate https://files.teamspeak-services.com/releases/server/3.13.3/teamspeak3-server_linux_amd64-3.13.3.tar.bz2 #we need the --no-check-certificate here because we are using old ssl libs and it will fail to verify ssl certificates
-tar -xjvf teamspeak3-server_linux_amd64-3.13.3.tar.bz2
+wget --no-check-certificate https://files.teamspeak-services.com/releases/server/3.13.6/teamspeak3-server_linux_amd64-3.13.6.tar.bz2 #we need the --no-check-certificate here because we are using old ssl libs and it will fail to verify ssl certificates
+tar -xjvf teamspeak3-server_linux_amd64-3.13.6.tar.bz2
 mv teamspeak3-server_linux_amd64 /home/flegma/teamspeak
 touch /home/flegma/teamspeak/.ts3server_license_accepted
 #if you are using sysinit and not systemd, you might want to edit ts3 startup script. use these 3 lines, or just manually edit it (change top lines only)
