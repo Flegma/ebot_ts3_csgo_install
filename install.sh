@@ -1,6 +1,6 @@
 #!/bin/bash
 apt-get update
-apt-get install -y language-pack-en-base software-properties-common nano wget curl git build-essential libxml2 libxml2-dev openssl libssl-dev pkg-config libcurl3 #install needed packages
+apt-get install -y language-pack-en-base software-properties-common nano wget curl git build-essential libxml2 libxml2-dev openssl libssl-dev pkg-config #install needed packages
 LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php -y #add ondrej's repo
 apt-get update #after adding new repo, we need to update package versions/information
 #we are removing new ssl libs and installing older ones
